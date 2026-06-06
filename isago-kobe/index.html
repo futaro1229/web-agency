@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hotel ISAGO Kobe — a 70-year-old ryotei ryokan with private Rokko Arima hot springs, Kobe beef kaiseki at Restaurant Kochou, and a 5-minute walk from Shin-Kobe Station. LGBTQ-friendly.">
+    <title>Ryotei Ryokan Hotel ISAGO Kobe | Traditional Japanese Hospitality</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #b8860b;
+            --gold-light: #d4a84b;
+            --ink: #1a1a1a;
+            --paper: #faf8f4;
+            --warm-gray: #6b6560;
+            --border: #e8e2d8;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+
+        body {
+            font-family: 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--ink);
+            margin: 0;
+            background: var(--paper);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', 'Noto Serif JP', Georgia, serif;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+
+        a { color: var(--gold); }
+
+        header {
+            background: #fff;
+            padding: 1rem 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: clamp(1.4rem, 4vw, 1.85rem);
+            letter-spacing: 0.04em;
+        }
+
+        header p {
+            margin: 0.25rem 0 0;
+            font-size: 0.85rem;
+            color: var(--warm-gray);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        nav {
+            margin-top: 0.75rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem 1.25rem;
+            font-size: 0.9rem;
+        }
+
+        nav a {
+            color: var(--ink);
+            text-decoration: none;
+        }
+
+        nav a:hover { color: var(--gold); }
+
+        .hero {
+            position: relative;
+            min-height: clamp(22rem, 55vh, 36rem);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            padding: clamp(5rem, 14vw, 9rem) 1.5rem;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(20, 32, 48, 0.25) 0%,
+                    rgba(26, 26, 26, 0.5) 55%,
+                    rgba(26, 26, 26, 0.72) 100%
+                );
+            z-index: 1;
+        }
+
+        .hero img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+        }
+
+        .hero > *:not(img) {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h2 {
+            font-size: clamp(1.75rem, 5vw, 2.75rem);
+            margin: 0 0 1rem;
+            font-weight: 500;
+        }
+
+        .hero p {
+            max-width: 36rem;
+            margin: 0 auto 1.75rem;
+            font-size: 1.05rem;
+            opacity: 0.95;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--gold);
+            color: #fff;
+            padding: 0.9rem 1.75rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border: 2px solid var(--gold);
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .btn:hover {
+            background: var(--gold-light);
+            border-color: var(--gold-light);
+            color: #fff;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border-color: #fff;
+        }
+
+        .btn-outline:hover {
+            background: #fff;
+            color: var(--ink);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .container h2 {
+            font-size: clamp(1.6rem, 4vw, 2rem);
+            margin: 0 0 1.25rem;
+            text-align: center;
+        }
+
+        .lead {
+            text-align: center;
+            color: var(--warm-gray);
+            max-width: 40rem;
+            margin: 0 auto 2.5rem;
+        }
+
+        .grid {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+
+        .card h3 {
+            margin: 0 0 0.5rem;
+            font-size: 1.25rem;
+            color: var(--gold);
+        }
+
+        .card p { margin: 0; font-size: 0.95rem; }
+
+        .highlights {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .highlights li {
+            padding: 0.85rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .highlights li:last-child { border-bottom: none; }
+
+        .highlights strong { color: var(--gold); }
+
+        .badge {
+            display: inline-block;
+            background: #f0ebe3;
+            color: var(--ink);
+            font-size: 0.8rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 3px;
+            margin-top: 0.5rem;
+        }
+
+        #booking {
+            background: #fff;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .booking-options {
+            display: grid;
+            gap: 1rem;
+            max-width: 560px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .booking-card {
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            text-align: center;
+        }
+
+        .booking-card.recommended {
+            border-color: var(--gold);
+            background: #fffdf8;
+        }
+
+        .booking-card h3 { margin: 0 0 0.35rem; font-size: 1.2rem; }
+
+        .booking-card p {
+            margin: 0 0 1rem;
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+        }
+
+        .booking-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--warm-gray);
+            max-width: 32rem;
+            margin: 0 auto;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        .info-table th,
+        .info-table td {
+            padding: 0.65rem 0;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .info-table th {
+            width: 8rem;
+            color: var(--warm-gray);
+            font-weight: 500;
+        }
+
+        .map-wrap {
+            margin-top: 1.5rem;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .map-wrap iframe {
+            display: block;
+            width: 100%;
+            height: 280px;
+            border: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            font-size: 0.85rem;
+            color: var(--warm-gray);
+        }
+
+        footer a { color: var(--warm-gray); }
+
+        .feature {
+            display: grid;
+            gap: 2rem;
+            align-items: center;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 768px) {
+            .feature { grid-template-columns: 1.1fr 0.9fr; }
+            .feature-reverse { grid-template-columns: 0.9fr 1.1fr; }
+            .feature-reverse .feature-images { order: 2; }
+            .feature-reverse .feature-copy { order: 1; }
+        }
+
+        .feature-images {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .feature img {
+            width: 100%;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            display: block;
+        }
+
+        .feature-copy h3 {
+            margin: 0 0 0.75rem;
+            font-size: 1.35rem;
+            color: var(--gold);
+        }
+
+        .feature-copy p {
+            margin: 0 0 1rem;
+            font-size: 0.95rem;
+            color: var(--warm-gray);
+        }
+
+        .feature-list {
+            margin: 0;
+            padding-left: 1.1rem;
+            font-size: 0.95rem;
+        }
+
+        .feature-list li { margin-bottom: 0.35rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ほてる ISAGO 神戸</h1>
+        <p>Ryotei Ryokan · Est. 70+ Years</p>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#dining">Dining</a>
+            <a href="#onsen">Onsen</a>
+            <a href="#rooms">Rooms</a>
+            <a href="#location">Location</a>
+            <a href="#booking">Book</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="images/hero-exterior.png" alt="Hotel ISAGO Kobe entrance at twilight — kumiko lattice doors and warm lantern light">
+        <h2>Experience the Art of Omotenashi in the Heart of Kobe</h2>
+        <p>Kobe beef kaiseki, three private hot-spring baths, and quiet elegance at the foot of Mt. Rokko — five minutes from Shin-Kobe Station.</p>
+        <div class="hero-actions">
+            <a href="#booking" class="btn">Book Your Stay</a>
+            <a href="https://isago.co.jp/" class="btn btn-outline" target="_blank" rel="noopener">Official Site</a>
+        </div>
+    </section>
+
+    <div class="container" id="about">
+        <h2>Why Stay with Us?</h2>
+        <p class="lead">A fully renovated ryotei ryokan blending 75 years of tradition with modern comfort — welcoming families, international travelers, and all guests.</p>
+        <ul class="highlights">
+            <li><strong>Exquisite Dining:</strong> Authentic Kobe beef kaiseki at <em>Restaurant Kochou</em> (胡蝶), using DNA-verified Kobe beef and Seto Inland Sea ingredients.</li>
+            <li><strong>Private Onsen:</strong> Three reservable baths fed by Rokko Arima Onsen — famed as the “beauty bath” for its soft, moisturizing waters.</li>
+            <li><strong>Prime Access:</strong> 5 min walk from Shin-Kobe Shinkansen Station · 20 min drive from Kobe Airport · free airport shuttle for international flights.</li>
+            <li><strong>Inclusive:</strong> Proudly LGBTQ-friendly and welcoming to all guests. Semi-universal design throughout the property.</li>
+        </ul>
+        <p style="text-align:center; margin-top:1.5rem;">
+            <span class="badge">Guest rating 8.7 on Booking.com</span>
+            <span class="badge">22 rooms · Free Wi-Fi</span>
+        </p>
+    </div>
+
+    <div class="container" id="dining" style="padding-top:0;">
+        <h2>Dining at Kochou</h2>
+        <p class="lead">Seasonal kaiseki celebrating Kobe’s land and sea — from breakfast set menus to premium Kobe beef courses.</p>
+        <div class="feature feature-reverse" style="margin-bottom:2.5rem;">
+            <div class="feature-images">
+                <img src="images/kobe-beef.png" alt="Premium marbled Kobe beef being hand-sliced at Restaurant Kochou">
+                <img src="images/kaiseki-dining.png" alt="Kobe beef kaiseki course — marbled beef shabu-shabu, sashimi, and seasonal dishes">
+            </div>
+            <div class="feature-copy">
+                <h3>Kobe Beef Kaiseki</h3>
+                <p>At <em>Restaurant Kochou</em> (料亭 胡蝶), DNA-verified Kobe beef takes center stage — thinly sliced for shabu-shabu in golden dashi, alongside sashimi, seasonal appetizers, and Seto Inland Sea delicacies.</p>
+                <ul class="feature-list">
+                    <li>Multi-course kaiseki from ¥8,800 (lunch) to premium beef courses</li>
+                    <li>神戸牛づくし会席 — steak, shabu-shabu, and nigiri in one meal</li>
+                    <li>Day visits welcome — lunch kaiseki without an overnight stay</li>
+                </ul>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3>Breakfast</h3>
+                <p>Traditional Japanese breakfast with grilled fish, dashimaki tamago, and the popular soy-milk nabe — a guest favorite.</p>
+            </div>
+            <div class="card">
+                <h3>Kaiseki Dinner</h3>
+                <p>Multi-course seasonal menus featuring Kobe beef shabu-shabu, steak, and nigiri — crafted by seasoned ryotei chefs.</p>
+            </div>
+            <div class="card">
+                <h3>Day Visit</h3>
+                <p>Lunch kaiseki available without an overnight stay. Reservations recommended.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="onsen" style="padding-top:0;">
+        <h2>Private Hot Springs</h2>
+        <p class="lead">Three private baths let you enjoy Rokko Arima Onsen at your own pace — including <em>Tsubo no Yu</em> and <em>Taki no Yu</em> with hinoki cypress aroma.</p>
+        <div class="grid">
+            <div class="card">
+                <h3>壺の湯 · Tsubo no Yu</h3>
+                <p>Glass, light, and granite create a serene soaking experience.</p>
+            </div>
+            <div class="card">
+                <h3>滝の湯 · Taki no Yu</h3>
+                <p>Relax amid the scent of Japanese cypress.</p>
+            </div>
+            <div class="card">
+                <h3>Reservable</h3>
+                <p>All three baths are private — soak without worry, at any hour that suits you.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="rooms" style="padding-top:0;">
+        <h2>Rooms &amp; Suites</h2>
+        <p class="lead">22 renovated rooms across Level ZEN and Level SHO — from modern Japanese tatami to open-air bath suites.</p>
+        <div class="feature">
+            <img src="images/room-tatami-suite.png" alt="Japanese-Western guest room with twin beds, tatami living area, shoji screens, and low dining table">
+            <div class="feature-copy">
+                <h3>Japanese-Western Rooms</h3>
+                <p>Spacious suites that pair Western beds with a raised tatami lounge — shoji-filtered light, a low wooden table, and zaisu seating for tea or in-room dining.</p>
+                <ul class="feature-list">
+                    <li>Modern 14-tatami rooms and stylish edgeless-tatami designs</li>
+                    <li>Special suites with Ryukyu tatami and low platform beds</li>
+                    <li>Free Wi-Fi, air conditioning, and in-room amenities</li>
+                    <li>ZEN the SUITE &amp; Sara — junior suites with private open-air baths</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section id="booking">
+        <div class="container">
+            <h2>Reserve Your Stay</h2>
+            <p class="lead">Book directly on our official site for the best rate (approx. 10% off). Booking.com is also available for international travelers.</p>
+
+            <div class="booking-options">
+                <div class="booking-card recommended">
+                    <h3>Official Website — Best Rate</h3>
+                    <p>Best price guarantee · 10% off vs. OTAs · Plans with Kobe beef dinner included</p>
+                    <a href="https://isago.co.jp/" class="btn" target="_blank" rel="noopener">Book on isago.co.jp</a>
+                </div>
+                <div class="booking-card">
+                    <h3>Booking.com</h3>
+                    <p>Convenient for international guests · Pay in your currency · Flexible cancellation options</p>
+                    <a href="https://www.booking.com/hotel/jp/isago-kobe.ja.html" class="btn" target="_blank" rel="noopener">Book on Booking.com</a>
+                </div>
+            </div>
+
+            <p class="booking-note">
+                Prefer to call? <a href="tel:+81782410135">+81 78-241-0135</a> · Check-in from 15:00 · Check-out by 11:00
+            </p>
+        </div>
+    </section>
+
+    <div class="container" id="location">
+        <h2>Location</h2>
+        <table class="info-table">
+            <tr>
+                <th>Address</th>
+                <td>4-3-7 Kumauchi-cho, Chuo Ward, Kobe 651-0056<br>熊内町 4-3-7, 神戸市中央区</td>
+            </tr>
+            <tr>
+                <th>Access</th>
+                <td>5 min walk from JR Shin-Kobe Station (Shinkansen) · ~13 min by bus from Sannomiya · ~15 min drive to Meriken Park</td>
+            </tr>
+            <tr>
+                <th>Parking</th>
+                <td>On-site paid parking available</td>
+            </tr>
+        </table>
+        <div class="map-wrap">
+            <iframe
+                title="Hotel ISAGO Kobe on Google Maps"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://maps.google.com/maps?q=%E6%96%99%E4%BA%AD%E6%97%85%E9%A4%A8+%E3%81%BB%E3%81%A6%E3%82%8BISAGO%E7%A5%9E%E6%88%B8&output=embed">
+            </iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; Hotel ISAGO Kobe · <a href="https://isago.co.jp/" target="_blank" rel="noopener">isago.co.jp</a></p>
+        <p>料亭旅館 ほてるISAGO神戸 — Kobe beef kaiseki &amp; private onsen since the 1950s</p>
+    </footer>
+</body>
+</html>
