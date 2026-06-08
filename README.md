@@ -1,2 +1,2 @@
 # web-agency
-AI-powered web design agency portfolio
+AI-powered web design agency portfolio by Futaro
